@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Charades! For Family</h1>
+
+<p>This is very fun Charades that we invented for you. We hope you like it!</p>
+
+<button onclick="getEasyWord()">Easy Word</button>
+
+<p id="easy_word"></p>
+
+<button onclick="getMediumWord()">Medium Word</button>
+
+<p id="medium_word"></p>
+
+<button onclick="getHardWord()">Hard Word</button>
+
+<p id="hard_word"></p>
+
+<script>
+var easy_words = [
+  'map',
+  'elephant',
+  'elf',
+  'Santa Clause',
+  'car'
+];
+
+var medium_words = [
+  'walrus',
+  'sandwich',
+  'sock',
+  'Christmas Tree'
+];
+
+var hard_words = [
+  'light bulb',
+  'pimple',
+  'doll',
+  'water bottle'
+];
+
+var easy_index = 0;
+var medium_index = 0;
+var hard_index = 0;
+
+function getEasyWord() {
+  if (easy_index === easy_words.length) {
+    easy_index = 0;
+  }
+  var new_word = easy_words[easy_index].slice();
+  document.getElementById("easy_word").innerHTML = new_word;
+  easy_index++;
+}
+
+function getMediumWord() {
+  if (medium_index === medium_words.length) {
+    medium_index = 0;
+  }
+  var new_word = medium_words[medium_index].slice();
+  document.getElementById("medium_word").innerHTML = new_word;
+  medium_index++;
+}
+
+function getHardWord() {
+  if (hard_index === hard_words.length) {
+    hard_index = 0;
+  }
+  var new_word = hard_words[hard_index].slice();
+  document.getElementById("hard_word").innerHTML = new_word;
+  hard_index++;
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+</script>
+
+</body>
+</html>
+
